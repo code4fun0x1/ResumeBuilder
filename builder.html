@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="logo.png" rel="shortcut icon">
+	<title>ResumeBuilder</title>
+	<link rel="stylesheet" type="text/css" href="w3.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+ <script>
+        if (/Android/i.test(navigator.userAgent)) {
+            document.location = "mobile.html";
+        }
+        else if(!window.location.hash) {
+            window.location = window.location + '#/';
+            window.location.reload();
+        }
+
+
+
+    </script>
+
+    <script type="text/javascript">
+    	var sex=null;
+function gender(v){
+	sex=v.value;
+	
+}
+
+    </script>
+	
+</head>
+<body class="w3-purple" style="width: 100vw; height: 100vh;">
+
+
+<div class="w3-container w3-padding-0" >
+	<div class="w3-amber w3-card-8 w3-left" style="width : 20vw; height: 100vh;">
+	<div class="w3-container w3-centered" style="text-align: -webkit-center;margin-top: 20px;">
+		<img src="logo.png" style="width: 18vw; height: auto;">
+<!-- 		<img src="indicator.png" style="top: 18vh;left: 8.5vw; position: fixed;">
+ -->		
+				<div class="w3-container">
+				<h2 class="" style="padding: 0px;">Resume Builder</h2>
+</div>
+	</div>
+	<div class="w3-panel w3-padding w3-teal">
+	<h4>TOKEN GENERATED</h4>
+	  <p class="w3-text-black w3-padding w3-green" id="token">GENERATED TOKEN</p>
+	</div>
+
+	<div class="w3-panel  w3-blue">
+	<div class="w3-container"><h4>TOKEN SEARCH</h4></div>
+	
+	<div class="w3-container w3-padding-0" style="">
+		
+
+	 <input type="text" class="w3-input w3-text-black w3-left" name="tokenSearch" id="tokenSearch" style="width: 15vw; ">
+	 <input type="button" class=" w3-pink w3-btn-floating w3-right" name="FIND" value="" id="find" style="background: url('search.png'); background-repeat: no-repeat;background-position: center; margin-right: 10px;margin-bottom: 10px;">
+
+	</div>
+	</div>
+
+<div class="w3-container " style="text-align: -webkit-center;margin-top: 20px;margin-bottom: 20px;">
+		<button class="w3-btn w3-left " style="margin-top: 5px;" id="submit">SUBMIT</button>
+<img src="indicator.png" class="w3-right" id="indicator" style="display: none;" >
+	</div>
+
+</div>
+
+
+
+
+
+
+
+	<div class="w3-container w3-right" style="width : 80vw; height: 100vh;">
+
+
+<div class="w3-card-8 w3-white w3-margin" id="result" style="width: 55vw; height: 90vh; display: none;">
+	<div class="w3-container">
+	<div class="w3-container w3-left w3-margin" style="width: 30vw;">
+		<p id='rname'></p>
+	<p id='rphone'></p>
+	<p id='raddress'></p>
+	<p id='rgender'></p>
+	</div>
+	<div class="w3-container w3-right w3-margin" style="width: 170px;height: 170px;">
+	<img src="anonymous_icon.png" class="w3-border "  id="rpicholder"  style="width: 160px; height:auto;">
+	</div>
+</div>
+	<div class="w3-container w3-margin">
+	
+	<p id='rschool'></p>
+	<p id='rpercentage'></p>
+	<p id='rcollege'></p>
+	<p id='rmeritone'></p>
+	<p id='rmerittwo'></p>
+
+	
+</div>
+
+
+</div>
+
+		
+		<div class="w3-card-4 w3-white w3-left" id="card1" style="width: 35vw;height: 90vh; margin-top: 5vh;margin-left: 2.5vh;">
+		<!-- FIRST CARD -->
+		<div class="w3-container w3-centered" style="text-align: -webkit-center;margin-top: 20px;margin-bottom: 20px;">
+		<img src="anonymous_icon.png" id="picholder" class="w3-border w3-padding" style="width: 100px; height: 100px;">
+		
+</div>
+<div class="w3-container w3-centered" style="text-align: -webkit-center;margin-bottom: 20px;">
+		<input type="file" class="w3-btn-bar" id="pic" name="profilepic" >
+
+</div>
+<div class="w3-container w3-centered" style="text-align: -webkit-center;margin-bottom: 20px;">
+	<input type="text" name="firstname" id="firstname" class="w3-round" placeholder="First Name" style=" margin-top:10px ; padding: 5px; width: 80%;">
+	<input type="text" name="lastname" id="lastname" class="w3-round" placeholder="Last Name" style=" margin-top:10px ; padding: 5px; width: 80%;">
+	<input type="text" name="phonenumber" id="phonenumber" class="w3-round" placeholder="Phone Number" style="  margin-top:10px ;padding: 5px; width: 80%;">
+	<input type="text" name="address" id="address" class="w3-round" placeholder="Full Address" style=" margin-top:10px ; padding: 5px; width: 80%;">
+<div class="w3-container" style="margin-top: 20px;">
+<h3>GENDER</h3>
+
+	<input type="radio" class="w3-radio" name="gender" id="male" value="Male" onchange="gender(this);" style=" margin-top:10px ; padding: 5px; "><span>Male</span>
+	<input type="radio" name="gender" class="w3-radio" id="female" value="Female" onchange="gender(this);" style=" margin-top:10px margin-left:20px; padding: 5px; "><span>Female</span>
+
+</div>
+
+		
+</div>
+
+			
+		</div>
+<div class="w3-card-4 w3-white w3-right" id="card2" style="width: 40vw;height: 90vh; margin-top: 5vh;margin-left: 2.5vh;">
+			
+
+<div class="w3-container w3-centered" style="text-align: -webkit-center;margin-bottom: 20px;">
+<h4>12-Class</h4>
+	<input type="text" name="tschool" id="school" class="w3-round" placeholder="School Name" style=" margin-top:10px ; padding: 5px; width: 90%;">
+	<h4>Percentage</h4>
+	<input type="text" name="schoolpercent" id="percent" class="w3-round" placeholder="Percentage" style=" margin-top:10px ; padding: 5px; width: 90%;">
+	<h4>Graduation</h4>
+	<input type="text" name="collegname" id="college" class="w3-round" placeholder="College Name" style=" margin-top:10px ; padding: 5px; width: 90%;">
+	<h4>Merit One</h4>
+	<input type="text" name="meritone" id="meritone" class="w3-round" placeholder="Experience Post" style="  margin-top:10px ;padding: 5px; width: 90%;">
+	<h4>Merit One</h4>
+	<input type="text" name="merittwo" id="merittwo" class="w3-round" placeholder="Experience Post" style=" margin-top:10px ; padding: 5px; width: 90%;">
+<div class="w3-container">
+
+
+
+		</div>
+
+	</div>
+
+</div>
+
+
+
+<script type="text/javascript">
+	
+$(function(){
+
+
+
+
+
+
+
+$("#find").click(function(){
+	
+var s=new FormData();
+
+	var client = new XMLHttpRequest();
+		client.open("POST", "http://localhost/ResumeBuilder/get.php",true);
+		
+		 client.onreadystatechange = function(){
+	      if (client.readyState == 4 && client.status == 200) 
+	      {
+	         var r=JSON.parse(client.responseText);
+	       document.getElementById("result").style.display="block";
+	       $("#card1").hide();
+	       $("#card2").hide();
+	      $("#rname").html("Full Name  : "+r.fname+" "+r.lname);
+	      $("#rphone").html("MobNo  : "+r.phone);
+	      $("#raddress").html("Address  : "+r.address);
+	      $("#rgender").html("Sex  : "+r.gender);
+	      $("#rschool").html("School  : "+r.school);
+	      $("#rpercent").html("Percentage in class 12  : "+r.percent);
+	      $("#rcollege").html("College  : "+r.college);
+	      $("#rmeritone").html("Merit One  : "+r.meritone);
+	      $("#rmerittwo").html("Merit two  : "+r.merittwo);
+	      	$("#rpicholder").attr('src',r.pic);
+	      }
+   		  }
+   		  s.append("token",$("#tokenSearch").val());
+   client.send(s);
+});
+
+
+
+var formdata= new FormData();
+
+document.getElementById('pic').onchange = function (evt) {
+    var tgt = evt.target || window.event.srcElement,
+        files = tgt.files;
+
+    // FileReader support
+    if (FileReader && files && files.length) {
+        var fr = new FileReader();
+        fr.onload = function () {
+            document.getElementById("picholder").src = fr.result;
+
+        }
+        fr.readAsDataURL(files[0]);
+    }
+
+    // Not supported
+    else {
+        // fallback -- perhaps submit the input to an iframe and temporarily store
+        // them on the server until the user's session ends.
+    }
+}
+
+
+	$("#submit").click(function(){
+		 $("#indicator").show();
+		formdata.append("fname",$("#firstname").val());
+		formdata.append("lname",$("#lastname").val());
+		formdata.append("phone",$("#phonenumber").val());
+		formdata.append("address",$("#address").val());
+		formdata.append("gender",sex);
+		formdata.append("school",$("#school").val());
+		formdata.append("percent",$("#percent").val());
+		formdata.append("college",$("#college").val());
+		formdata.append("meritone",$("#meritone").val());
+		formdata.append("merittwo",$("#merittwo").val());
+		var pic=document.getElementById("pic");
+		formdata.append("pic",pic.files[0]);
+		
+		var client = new XMLHttpRequest();
+		client.open("POST", "http://localhost/ResumeBuilder/upload.php",true);
+		
+		 client.onreadystatechange = function(){
+	      if (client.readyState == 4 && client.status == 200) 
+	      {
+	         $("#token").html(client.responseText);
+	       $("#indicator").hide();
+	      }
+   		  }
+   client.send(formdata);
+
+	});
+	
+
+
+
+});
+
+</script>
+
+
+
+</body>
+</html>
