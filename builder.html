@@ -76,26 +76,38 @@ function gender(v){
 	<div class="w3-container w3-right" style="width : 80vw; height: 100vh;">
 
 
-<div class="w3-card-8 w3-white w3-margin" id="result" style="width: 55vw; height: 90vh; display: none;">
+<div class="w3-card-8 w3-white w3-margin" id="result" style="width: 70vw; height: 93vh; display: none;">
 	<div class="w3-container">
-	<div class="w3-container w3-left w3-margin" style="width: 30vw;">
-		<p id='rname'></p>
-	<p id='rphone'></p>
-	<p id='raddress'></p>
-	<p id='rgender'></p>
-	</div>
-	<div class="w3-container w3-right w3-margin" style="width: 170px;height: 170px;">
-	<img src="anonymous_icon.png" class="w3-border "  id="rpicholder"  style="width: 160px; height:auto;">
-	</div>
-</div>
-	<div class="w3-container w3-margin">
-	
-	<p id='rschool'></p>
-	<p id='rpercentage'></p>
-	<p id='rcollege'></p>
-	<p id='rmeritone'></p>
-	<p id='rmerittwo'></p>
 
+	
+	<div class="w3-container w3-left w3-margin" style="width: auto; height: 85vh; max-width: 300px;">
+
+		<img src="anonymous_icon.png" class="w3-border w3-margin "  id="rpicholder"  style="width: 220px; height:auto; max-height: 200px;">
+		<p class="w3-wide w3-opacity">NAME</p>
+				<p id='rname' class="w3-text-cyan"></p>
+
+		<p class="w3-wide w3-opacity">CONTACT NO.</p>
+				<p id='rphone' class="w3-text-cyan"></p>
+
+		<p class="w3-wide w3-opacity">ADDRESS</p>
+				<p id='raddress' class="w3-text-cyan"></p>
+
+		<p class="w3-wide w3-opacity">SEX</p>
+		<p id='rgender' class="w3-text-cyan"></p>
+	</div>
+
+	<div class="w3-container w3-margin w3-left w3-sand" style="width: 40vw; padding-top: 50px; height: 85vh;">
+	<h3 class="w3-wide">ACADEMIC</h3>
+	<p id='rschool' class="w3-text-deep-orange"></p>
+	<p id='rpercentage' class="w3-text-deep-orange"></p>
+	<p id='rcollege' class="w3-text-deep-orange"></p>
+	<h3 class="w3-wide">EXTRA-CURRICULAR</h3>
+
+	<p id='rmeritone' class="w3-text-deep-orange"></p>
+	<p id='rmerittwo' class="w3-text-deep-orange"></p>
+
+</div>
+	
 	
 </div>
 
@@ -181,15 +193,15 @@ var s=new FormData();
 	       document.getElementById("result").style.display="block";
 	       $("#card1").hide();
 	       $("#card2").hide();
-	      $("#rname").html("Full Name  : "+r.fname+" "+r.lname);
-	      $("#rphone").html("MobNo  : "+r.phone);
-	      $("#raddress").html("Address  : "+r.address);
-	      $("#rgender").html("Sex  : "+r.gender);
-	      $("#rschool").html("School  : "+r.school);
-	      $("#rpercent").html("Percentage in class 12  : "+r.percent);
-	      $("#rcollege").html("College  : "+r.college);
-	      $("#rmeritone").html("Merit One  : "+r.meritone);
-	      $("#rmerittwo").html("Merit two  : "+r.merittwo);
+	      $("#rname").html(""+r.fname+" "+r.lname);
+	      $("#rphone").html(""+r.phone);
+	      $("#raddress").html(""+r.address);
+	      $("#rgender").html(""+r.gender);
+	      $("#rschool").html(""+r.school);
+	      $("#rpercent").html(""+r.percent);
+	      $("#rcollege").html(""+r.college);
+	      $("#rmeritone").html(""+r.meritone);
+	      $("#rmerittwo").html(""+r.merittwo);
 	      	$("#rpicholder").attr('src',r.pic);
 	      }
    		  }
